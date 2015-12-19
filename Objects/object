@@ -1,36 +1,29 @@
-import Objects
+import main
 
-scene_change = None
-
-class Scene():
+class Object():
+    description = 'This is an empty object'
+    can_talk = False
+    can_look = False
+    can_grab = False
+    can_touch = False
+    can_use = False
+    can_go = False
+    type = 'object' # npc and place are also possible.
     
-    master_list = []
-    objects = []
-    object_descriptions = []
-    places = []
-    place_descriptions = []
-    npcs = []
-    npc_descriptions = []
-    description = 'This string describes the scene'
+    def Talk(self): # if the actions are possible define what they do.
+        pass
+        
+    def Use(self):
+        pass
+        
+    def Grab(self):
+        pass
+        
+    def Touch(self):
+        pass
+        
+    def Look(self):
+        pass
     
-    
-    def PopLists(self):
-        for item in self.master_list:
-            if item.type == 'object':
-                self.objects.append(item)
-            elif item.type == 'place':
-                self.places.append(item)
-            elif item.type == 'npc':
-                self.npcs.append(item)
-            else:
-                print('Invalid Object Type' + item.description)
-                
-    def PopItemDesc(self):
-        for item in self.objects:
-            object_descriptions.append(item.description)
-        for item in self.places:
-            place_descriptions.append(item.description)
-        for item in self.npcs:
-            npc_descriptions.append(item.description)
-    
-    
+    def Go(self):
+        pass
