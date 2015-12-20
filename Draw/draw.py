@@ -164,3 +164,21 @@ class Text():
         
 typing = Text.PrintText
         
+class ObjectDisplay():
+    
+    def SetObjectDesc(object, place, npc):
+        iii = 0
+        for item in object:
+            pygame.draw.rect(screen, WHITE, object_rects[iii])
+            typing(item, object_rects[iii])
+            iii +=1
+        iii = 0
+        for item in place:
+            pygame.draw.rect(screen, WHITE, place_rects[iii])
+            typing(item, place_rects[iii])
+            iii += 1
+        iii = 0
+        for item in npc:
+            pygame.draw.rect(screen, WHITE, npc_rects[iii])
+            typing(item, npc_rects[iii])
+            iii += 1
