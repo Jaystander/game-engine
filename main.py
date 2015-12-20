@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import pygame
+import pygame, Draw
 import sys, os
 print (sys.path)
 sys.path.append('Scenario')
@@ -269,11 +269,11 @@ class Engine(): #autoload a main menu at some point
         pass
         
     def DisplayHud():
-        PermanentDraw.DrawMainRects()
+        Draw.draw.PermanentDraw.DrawMainRects()
         
     def SetDescription(): #calls the description from the scene and displays it.
-        typing(current.description, mainscreen)
-        print (current.description)
+        Draw.draw.typing(current.description, mainscreen)
+
         
 class MainMenu():
     
