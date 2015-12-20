@@ -254,7 +254,19 @@ class Engine(): #autoload a main menu at some point
             place_count += 1
         
     def SetObjectDescription(object, place, npc): #handled here
-        pass
+        iii = 0
+        for item in object:
+            Draw.draw.typing(item, object_rects[iii])
+            iii +=1
+        iii = 0
+        for item in place:
+            Draw.draw.typing(item, place_rects[iii])
+            iii += 1
+        iii = 0
+        for item in npc:
+            Draw.draw.typing(item, npc_rects[iii])
+            iii += 1
+        
     
     def SaveGame():
         pass
