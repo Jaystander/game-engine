@@ -220,7 +220,7 @@ class Engine(): #autoload a main menu at some point
         Engine.DisplayHud()
         current.PopLists() # populates item lists in current scene
         current.PopItemDesc() # populates item description list in current scene
-        typing(current.description, mainscreen) #Displays main scene description
+        Draw.draw.typing(current.description, Draw.draw.mainscreen) #Displays main scene description
         Engine.DispLists(current.objects, current.places, current.npcs)
         Engine.SetDescription()
         pygame.display.flip()
