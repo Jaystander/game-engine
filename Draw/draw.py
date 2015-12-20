@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 import pygame
-import sys, os
-print (sys.path)
-sys.path.append('Scenario')
-sys.path.append('Objects')
+
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -68,45 +65,6 @@ object_rects = [ob1,ob2,ob3,ob4,ob5,ob6,ob7,ob8,ob9,ob10]
 place_rects = [pl1,pl2,pl3,pl4,pl5,pl6,pl7,pl8,pl9,pl10]
 npc_rects = [np1,np2,np3,np4,np5,np6,np7,np8,np9,np10]
 
-
-class MainMenu():
-    
-    master_list = []
-    objects = []
-    object_descriptions = []
-    places = []
-    place_descriptions = []
-    npcs = []
-    npc_descriptions = []
-    description = 'This string describes the scene'
-    
-    
-    def PopLists():
-        pass
-        '''for item in self.master_list:
-            if item.type == 'object':
-                self.objects.append(item)
-            elif item.type == 'place':
-                self.places.append(item)
-            elif item.type == 'npc':
-                self.npcs.append(item)
-            else:
-                print('Invalid Object Type' + item.description)'''
-                
-    def PopItemDesc():
-        pass
-        '''for item in self.objects:
-            object_descriptions.append(item.description)
-        for item in self.places:
-            place_descriptions.append(item.description)
-        for item in self.npcs:
-            npc_descriptions.append(item.description)'''
-scenes = [None, MainMenu]
-current = scenes[1]
-previous = scenes[0]
-object_count = 0
-npc_count = 0
-place_count = 0
 pygame.init()
 
 screen = pygame.display.set_mode((1200, 700)) # creates screen to be used
@@ -206,98 +164,3 @@ class Text():
         
 typing = Text.PrintText
         
-class Engine(): #autoload a main menu at some point
-    
-    def ChangeScene(scene):
-        global scenes
-        scenes[0] = scenes[1]
-        scenes[1] = scene
-        print(scenes[1])
-        Engine.SetScene()
-    
-    def SetScene():
-        global scenes
-        Engine.DisplayHud()
-        current.PopLists() # populates item lists in current scene
-        current.PopItemDesc() # populates item description list in current scene
-        typing(current.description, mainscreen) #Displays main scene description
-        Engine.DispLists(current.objects, current.places, current.npcs)
-        Engine.SetDescription()
-        pygame.display.flip()
-        
-    def Check(scene = False): #run button actions Engine.Check(action)
-        if scene == False:
-            return False
-        if scene != False:
-            Engine.ChangeScene(scene)
-            scene = False
-        
-    def DispLists(object, npc, place): #handled here
-        global object_count, npc_count, place_count
-        iii = 0
-        for item in object:
-            pygame.draw.rect(screen, WHITE, object_list[iii])
-            typing(item.description, object_list[iii])
-            iii += 1
-            object_count +=1 # used to check if slot is active and query for mouse over object descriptions
-        iii = 0
-        for item in npc:
-            pygame.draw.rect(screen, WHITE, npc_list[iii])
-            typing(item.description, npc_list[iii])
-            iii += 1
-            npc_count += 1
-        iii = 0
-        for item in place:
-            pygame.draw.rect(screen, WHITE, place_list[iii])
-            typing(item.description, WHITE, place_list[iii])
-            iii += 1
-            place_count += 1
-        
-    def SetObjectDescription(object, place, npc): #handled here
-        pass
-    
-    def SaveGame():
-        pass
-        
-    def LoadGame():
-        pass
-        
-    def LoadScenario(scenario): #loads a set of scenes into the program to use.
-        pass
-
-    def BattleSet(allies, enemies):
-        pass
-        
-    def DisplayHud():
-        PermanentDraw.DrawMainRects()
-        
-    def SetDescription(): #calls the description from the scene and displays it.
-        typing(current.description, mainscreen)
-        print (current.description)
-        
-class MainMenu():
-    
-    description = 'filler'
-        
-import Scenario
-start = True        
-while True:
-    #print('running loop')
-    for event in pygame.event.get():
-        pos = pygame.mouse.get_pos()
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        Text.MousePosCheck(pos)
-    #if scene.scene_change != False: #Scan for scene change
-    #    Engine.ChangeScene()
-    if start == True:
-        Engine.ChangeScene(MainMenu)
-        start = False
-    #pygame.draw.rect(screen, WHITE, mainscreen)
-    #pygame.draw.rect(screen, WHITE, leftstats)
-    #pygame.draw.rect(screen, WHITE, rightstats)
-    #screen.blit(screen, (0, 0))
-    #PermanentDraw.DrawMainRects()
-    #PermanentDraw.DrawPlayerRects()
-    pygame.display.flip()
