@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import pygame, Draw
+import pygame, draw
 import sys, os
 print (sys.path)
 sys.path.append('Scenario')
