@@ -32,11 +32,9 @@ class NPC():
     
     description = 'This is an empty object'
     can_talk = False
-    can_look = False
-    can_grab = False
-    can_touch = False
-    can_use = False
-    can_go = False
+    can_fight = False
+    can_party = False
+    can_trade = False
     type = 'npc' # npc and place are also possible.
     
     def Talk(self): # if the actions are possible define what they do.
@@ -54,8 +52,7 @@ class NPC():
     def Look(self):
         pass
     
-    def Go(self):
-        pass
+
     
 class Item(): #base class for usable/collectable items/equipment
     
@@ -64,17 +61,18 @@ class Item(): #base class for usable/collectable items/equipment
     usable = False
     quantity = False
     consumable = False
-    can_use = False
-    can_go = False
+    can_sell = False
+    value = 0
+    
     type = 'item' # npc and place are also possible.
     
-    def Talk(self): # if the actions are possible define what they do.
+    def Use(self): # if the actions are possible define what they do.
         pass
         
-    def Use(self):
+    def Equip(self):
         pass
         
-    def Grab(self):
+    def Sell(self):
         pass
         
     def Touch(self):
@@ -83,8 +81,7 @@ class Item(): #base class for usable/collectable items/equipment
     def Look(self):
         pass
     
-    def Go(self):
-        pass
+
     
 class Transition():
     
@@ -95,16 +92,16 @@ class Transition():
     can_go = False
     type = 'transition'
     
-    def Talk(self): # if the actions are possible define what they do.
+    def Go(self): # if the actions are possible define what they do.
         pass
         
-    def Use(self):
+    def Unlock(self):
         pass
         
-    def Grab(self):
+    def Lock(self):
         pass
         
-    def Touch(self):
+    def Reveal(self):
         pass
         
     def Look(self):
