@@ -1,6 +1,6 @@
 import base
 import main
 
-class Orc(NPC):
+class Orc(base.NPC):
   can_talk = True
   can_fight = True
