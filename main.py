@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import pygame, draw
+import pygame, Draw
 import sys, os
 print (sys.path)
 sys.path.append('Scenario')
@@ -204,7 +204,7 @@ class Text():
         screen.blit(luster, (x,y+18))
         screen.blit(orgoner, (x,y+36))'''
         
-typing = Text.PrintText
+typing = Draw.draw.Text.PrintText
         
 class Engine(): #autoload a main menu at some point
     
@@ -273,7 +273,7 @@ class Engine(): #autoload a main menu at some point
         Draw.draw.PermanentDraw.DrawMainRects()
         
     def SetDescription(): #calls the description from the scene and displays it.
-        Draw.draw.typing(current.description, mainscreen)
+        typing(current.description, mainscreen)
 
         
 class MainMenu():
