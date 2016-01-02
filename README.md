@@ -6,4 +6,4 @@ When drawing strings to a box using the typing(string, box) method, the function
 
 Every object created needs to    import base, main, Draw     and inherit from one of the classes in base.
 
-Every scene needs to     import scene, Objects    
+Every scene needs to     import scene, Objects      and should inherit the Scene class from scene.py.
