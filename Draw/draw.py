@@ -115,12 +115,18 @@ class Text():
         y = rect[1] + 2
         write = ""
         for word in text:
-            write += (" " + str(word))
-            if len(write) *10 >= (rect[0] + rect[2]):
-                text = font.render(write, 1, BLACK)
-                screen.blit(text, (x, y,))
-                y = y + 18
-                write = ""
+            if word == 'rtrn':
+                text = font.render(write, 1, black)
+                screen.blit(text(x,y))
+                y += 18
+                write = ''
+            else:
+                write += (" " + str(word))
+                if len(write) *10 >= (rect[0] + rect[2]):
+                    text = font.render(write, 1, BLACK)
+                    screen.blit(text, (x, y,))
+                    y += 18
+                    write = ""
         text = font.render(write, 1, BLACK)
         screen.blit(text, (x, y,))
         
