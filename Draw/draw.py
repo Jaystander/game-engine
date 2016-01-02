@@ -61,6 +61,7 @@ button7 = pygame.Rect(275, 635, 200, 50)
 button8 = pygame.Rect(500, 635, 200, 50)
 button9 = pygame.Rect(725, 635, 200, 50)
 button10 = pygame.Rect(950, 635, 200, 50)
+dialogue_box = pygame.Rect(975, 25, 200, 525)
 object_rects = [ob1,ob2,ob3,ob4,ob5,ob6,ob7,ob8,ob9,ob10]
 place_rects = [pl1,pl2,pl3,pl4,pl5,pl6,pl7,pl8,pl9,pl10]
 npc_rects = [np1,np2,np3,np4,np5,np6,np7,np8,np9,np10]
@@ -199,5 +200,5 @@ class DialogueBox():
         if cont != 1:
             dialogue_string = ''
         dialogue_string.append(string)
-        typing(dialogue_string, dialogue_rect) # make typing detect a specific string for return lines
+        typing(dialogue_string, dialogue_box) # make typing detect a specific string for return lines
             
