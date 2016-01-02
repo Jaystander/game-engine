@@ -64,7 +64,7 @@ button10 = pygame.Rect(950, 635, 200, 50)
 object_rects = [ob1,ob2,ob3,ob4,ob5,ob6,ob7,ob8,ob9,ob10]
 place_rects = [pl1,pl2,pl3,pl4,pl5,pl6,pl7,pl8,pl9,pl10]
 npc_rects = [np1,np2,np3,np4,np5,np6,np7,np8,np9,np10]
-
+dialogue_string = ''
 pygame.init()
 
 screen = pygame.display.set_mode((1200, 700)) # creates screen to be used
@@ -182,3 +182,16 @@ class ObjectDisplay():
             pygame.draw.rect(screen, WHITE, npc_rects[iii])
             typing(item, npc_rects[iii])
             iii += 1
+            
+class DialogueBox():
+    
+    def DrawBox(): #draws the dialogue box.
+        pass
+    
+    def DrawText(string, cont):
+        global dialogue_string
+        if cont != 1:
+            dialogue_string = ''
+        dialogue_string.append(string)
+        typing(dialogue_string, dialogue_rect) # make typing detect a specific string for return lines
+            
