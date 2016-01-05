@@ -1,12 +1,13 @@
 import scene
-import Objects
+from Objects import *
 
-class OpeningScene(scene):
-    master_list = []
+
+class OpeningScene(scene.scene):
+    master_list = [orc]
     objects = []
     object_descriptions = []
     places = []
     place_descriptions = []
     npcs = []
     npc_descriptions = []
-    description = 'This string describes the scene'
+    description = 'I am testing the Scene description.'
