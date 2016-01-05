@@ -1,5 +1,5 @@
 import scene
-from Objects import *
+import Objects
 
 
 class OpeningScene(scene.scene):
