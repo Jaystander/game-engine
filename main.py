@@ -4,6 +4,7 @@ import sys, os
 print (sys.path)
 sys.path.append('Scenario')
 sys.path.append('Objects')
+sys.path.append('Draw')
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
