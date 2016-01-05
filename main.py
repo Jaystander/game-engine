@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-import pygame, Draw
 import sys, os
-print (sys.path)
 sys.path.append('Scenario')
 sys.path.append('Objects')
 sys.path.append('Draw')
+print (sys.path)
+import pygame, Draw
+from Draw import draw
+
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -205,8 +207,8 @@ class Text():
         screen.blit(luster, (x,y+18))
         screen.blit(orgoner, (x,y+36))'''
         
-typing = Draw.draw.Text.PrintText
-        
+typing = draw.Text.PrintText
+
 class Engine(): #autoload a main menu at some point
     
     def ChangeScene(scene):
@@ -271,7 +273,7 @@ class Engine(): #autoload a main menu at some point
         pass
         
     def DisplayHud():
-        Draw.draw.PermanentDraw.DrawMainRects()
+        draw.PermanentDraw.DrawMainRects()
         
     def SetDescription(): #calls the description from the scene and displays it.
         typing(current.description, mainscreen)
