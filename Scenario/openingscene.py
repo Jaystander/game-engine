@@ -2,7 +2,7 @@ import scene
 import Objects
 
 #name each object reference as name = module.class
-orc1 = orc.orc
+orc1 = orc.Orc
 
 class OpeningScene(scene.scene):
     master_list = [orc1]
