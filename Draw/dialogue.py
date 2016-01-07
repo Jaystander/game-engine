@@ -1,5 +1,7 @@
 import pygame, draw
 
+pygame.init()
+
 dialogue_box = pygame.Rect(1,1,1,1)
 response_box = pygame.Rect(1,1,1,1)
 class Dialogue():
