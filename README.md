@@ -12,4 +12,4 @@ All Scenes need a reference name that is used to check and see what the current 
 Stats and flags should be handled in the scenes and objects in which they are relevant. The Player is an object.
 
 
-To receive a description or some dialogue call Draw.file.DefString(txtfile, keyword) to search for the keyword and append lines until it reads Finished.
+To receive a description or some dialogue call Draw.file.DefString(txtfile, keyword) to search for the keyword and append lines until it reads Finished, it will return a string.
