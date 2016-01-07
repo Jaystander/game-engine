@@ -13,14 +13,17 @@ class RobotLeader(base.NPC):
   can_trade = False
   
   def Talk():
-    if main.scenes[1].reference == "Robot Leader's Office"
-      if met_pc == False:
+    if main.scenes[1].reference == "Robot Leader's Office"  
+      if met_pc == False: # hasn;t met the pc yet
         pass
-      elif met_pc == True and opinion_pc >= 50:
+      elif met_pc == True and opinion_pc >= 50: #has met and likes the pc
         pass
-      elif met_pc == True and opinion_pc >=0:
+      elif met_pc == True and opinion_pc >=0: # has met and is impartial to the pc
         pass
-      else:
+      else: # has met and dislikes the pc
         pass
-    elif main.scenes[1].reference == "Other place you can meet him"
+    elif main.scenes[1].reference == "Other place you can meet him":
       pass
+      if met_pc == False: # hasn't met the pc yet
+        pass
+      #et cetera
