@@ -26,6 +26,7 @@ filed = 'text.robotleader.txt'
       else: # has met and dislikes the pc
         pass
     elif main.scenes[1].reference == "Other place you can meet him":
+      
       pass
       if met_pc == False: # hasn't met the pc yet
         pass
