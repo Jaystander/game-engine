@@ -10,3 +10,6 @@ Every scene needs to     import scene, Objects      and should inherit the Scene
 All Scenes need a reference name that is used to check and see what the current scene is when an object is accessed that is referenced by
  Scene.reference
 Stats and flags should be handled in the scenes and objects in which they are relevant. The Player is an object.
+
+
+To receive a description or some dialogue call Draw.file.
