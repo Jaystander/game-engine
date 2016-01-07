@@ -1,6 +1,0 @@
-
-
-Robot Leader Not Met Tower 
-This is the text that should be returned if it was to be ran as I expect it.
-It should work with multiple lines up until it reads the keyword for stopping.
-Ended
