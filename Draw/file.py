@@ -8,7 +8,7 @@ def DefString(file, keyphrase):
     for line in infile:
         if line.strip() == keyphrase:
             copy = True
-        elif line.strip() == "Finish":
+        elif line.strip() == "Finished":
             copy = False
         elif copy:
             strng.append(line)
