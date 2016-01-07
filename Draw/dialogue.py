@@ -2,8 +2,10 @@ import pygame, draw
 
 pygame.init()
 
-dialogue_box = pygame.Rect(1,1,1,1)
-response_box = pygame.Rect(1,1,1,1)
+dialogue_box = pygame.Rect(20, 20, 100, 300)
+response_box = pygame.Rect(200, 20, 100, 300)
+
+
 class Dialogue():
   display = ''
   response = ''
@@ -14,3 +16,5 @@ class Dialogue():
     response = responses
     draw.typing(display, dialogue_box)
     draw.typing(response, response_box)
+    
+    
