@@ -1,9 +1,9 @@
 import re
 
 
-def DefString(file, keyphrase):
+def DefString(files, keyphrase):
   strng = ''
-  with open(file) as infile:
+  with open(files) as infile:
     copy = False
     for line in infile:
         if line.strip() == keyphrase:
