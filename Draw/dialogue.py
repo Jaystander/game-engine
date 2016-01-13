@@ -30,4 +30,4 @@ class Dialogue():
       elif word == 'reff':
         tag = True
       elif word != 'reff':
-        each += '' + word
+        response += '' + word
