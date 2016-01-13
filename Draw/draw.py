@@ -131,6 +131,29 @@ class Text():
         text = font.render(write, 1, BLACK)
         screen.blit(text, (x, y,))
         
+    def ResponseText(string, rect):
+        #set a value through rect to define the starting point of the text
+        text = str(string).split()
+        x = rect[0] + 2
+        y = rect[1] + 2
+        write = "1.)"
+        i = 2 # Counter for the number of each response
+        for word in text:
+            if word == 'rtrn':
+                text = font.render(write, 1, black)
+                screen.blit(text(x,y))
+                y += 18
+                write += i + '.)'
+                i += 1
+            else:
+                write += (" " + str(word))
+                if len(write) *10 >= (rect[0] + rect[2]):
+                    text = font.render(write, 1, BLACK)
+                    screen.blit(text, (x, y,))
+                    y += 18
+                    write = ""
+        text = font.render(write, 1, BLACK)
+        screen.blit(text, (x, y,))
         
     def MousePosCheck(pos):
         x = pos[0]
