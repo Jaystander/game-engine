@@ -4,6 +4,7 @@ scene_change = None
 
 class Scene():
     
+    reference = ''
     master_list = []
     objects = []
     object_descriptions = []
