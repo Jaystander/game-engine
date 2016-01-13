@@ -4,7 +4,7 @@ pygame.init()
 
 dialogue_box = pygame.Rect(20, 20, 100, 300)
 response_box = pygame.Rect(200, 20, 100, 300)
-
+finished = 'end'
 
 class Dialogue():
   display = ''
@@ -31,3 +31,11 @@ class Dialogue():
         tag = True
       elif word != 'reff':
         response += '' + word
+        
+  def CleanUpDialogue(end):
+    display = ''
+    response = ''
+    response_ref = []
+    if end == finished:
+      Draw.draw.dialogue = False
+    
