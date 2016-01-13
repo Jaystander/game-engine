@@ -25,7 +25,7 @@ class Dialogue():
     tag = False
     for word in responses:
       if tag == True:
-        respnse_ref.append(word)
+        response_ref.append(word)
         tag = False
       elif word == 'reff':
         tag = True
