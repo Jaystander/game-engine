@@ -17,7 +17,7 @@ class Dialogue():
     response = responses
     draw.typing(display, dialogue_box)
     Dialogue.SetResponses()
-    draw.typing(response, response_box)
+    draw.Text.ResponseText(response, response_box)
     
   def SetResponses():
     responses = response.split()
