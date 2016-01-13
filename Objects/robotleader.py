@@ -4,9 +4,9 @@ class RobotLeader(base.NPC):
 filed = 'text.robotleader.txt'
   
   met_pc = False
-  opinion_pc = False
+  opinion_pc = 75
   pc_gave_treasure = False
-  description = ''
+  description = 'Robot leader'
   can_talk = True
   can_fight = True
   can_look = True
@@ -26,8 +26,6 @@ filed = 'text.robotleader.txt'
       else: # has met and dislikes the pc
         pass
     elif main.scenes[1].reference == "Other place you can meet him":
-      
-      pass
       if met_pc == False: # hasn't met the pc yet
         pass
       #et cetera
