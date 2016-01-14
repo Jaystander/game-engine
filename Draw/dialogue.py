@@ -36,6 +36,6 @@ class Dialogue():
     display = ''
     response = ''
     response_ref = []
-    if end == finished:
+    if end == True:
       Draw.draw.dialogue = False
     
