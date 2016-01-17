@@ -2,7 +2,7 @@ import main, Draw, base
 
 class RobotLeader(base.NPC):
 filed = 'text.robotleader.txt'
-  
+reference = 'Robot Leader'  
   met_pc = False
   opinion_pc = 75
   pc_gave_treasure = False
@@ -18,7 +18,7 @@ filed = 'text.robotleader.txt'
       if met_pc == False: # hasn;t met the pc yet
         npc_talk = Draw.file.DefString(filed, 'Robot Leader Not Met Office')
         response = Draw.file.DefString(filed, 'Robot Leader Not Met Office Response')
-        #This needs to call a function that uses these for setting up the interactive dialogue system.
+        Draw.dialogue.Dialogue.InitDialogue(npc_talk, response)
       elif met_pc == True and opinion_pc >= 50: #has met and likes the pc
         pass
       elif met_pc == True and opinion_pc >=0: # has met and is impartial to the pc
@@ -29,3 +29,4 @@ filed = 'text.robotleader.txt'
       if met_pc == False: # hasn't met the pc yet
         pass
       #et cetera
+      
