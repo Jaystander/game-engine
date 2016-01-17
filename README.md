@@ -17,7 +17,7 @@ To receive a description or some dialogue call Draw.file.DefString(txtfile, keyw
 ```
 Format for response text:
 Name of response text block #Could use more than one block for conditional responses
-'reff' 'Reference to call response' Response display text 'rtrn'
-'reff' 'Reference to call response' Response display text 'rtrn'
+'reff' 'One word reference to call response' Response display text 'rtrn'
+'reff' 'One word reference to call response' Response display text 'rtrn'
 Finished
 ```
