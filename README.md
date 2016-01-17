@@ -15,7 +15,11 @@ Stats and flags should be handled in the scenes and objects in which they are re
 
 
 To receive a description or some dialogue call Draw.file.DefString(txtfile, keyword) to search for the keyword and append lines until it reads Finished, it will return a string.
-
+i.e.
+```
+npc_talk = Draw.file.DefString(filed, 'Robot Leader Not Met Office')
+response = Draw.file.DefString(filed, 'Robot Leader Not Met Office Response')
+```
 
 Format for response text:
 ```
