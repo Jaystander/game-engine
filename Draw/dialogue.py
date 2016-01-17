@@ -4,7 +4,7 @@ pygame.init()
 
 dialogue_box = pygame.Rect(20, 20, 100, 300)
 response_box = pygame.Rect(200, 20, 100, 300)
-finished = 'end'
+done = 'end' #can send done as parameter to cleanup so the code looks nicer
 
 class Dialogue():
   display = ''
@@ -12,17 +12,17 @@ class Dialogue():
   response_ref = []
   
   def InitDialogue(text, responses):
-    Draw.draw.dialogue = True
+    Draw.draw.dialogue = True #Sets the dialogue reference to true
     display = text
     response = responses
-    draw.typing(display, dialogue_box)
-    Dialogue.SetResponses()
+    draw.typing(display, dialogue_box) 
+    Dialogue.SetResponses() #Formats the response references and text, which is more complicated than the display text.
     draw.Text.ResponseText(response, response_box)
     
   def SetResponses():
-    responses = response.split()
+    responses = response.split() #split the response string into words
     fullstring = ''
-    tag = False
+    tag = False #used to find reff tags
     for word in responses:
       if tag == True:
         response_ref.append(word)
@@ -36,6 +36,6 @@ class Dialogue():
     display = ''
     response = ''
     response_ref = []
-    if end == True:
+    if end == True: #Clears dialogue reference
       Draw.draw.dialogue = False
     
