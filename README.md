@@ -14,8 +14,9 @@ Stats and flags should be handled in the scenes and objects in which they are re
 
 To receive a description or some dialogue call Draw.file.DefString(txtfile, keyword) to search for the keyword and append lines until it reads Finished, it will return a string.
 
-```
+
 Format for response text:
+```
 Name of response text block #Could use more than one block for conditional responses
 'reff' 'One word reference to call response' Response display text 'rtrn'
 'reff' 'One word reference to call response' Response display text 'rtrn'
