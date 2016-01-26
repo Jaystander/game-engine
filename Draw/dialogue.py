@@ -32,6 +32,15 @@ class Dialogue():
       elif word != 'reff':
         response += '' + word
         
+  def HandleEvents(mouse_pos, ev):
+    if ev = 'Mouse Button Down':
+      pass# Check location of mouse when button was pressed
+    elif ev = 'Keypress':
+      pass #use the keypress to activate a response
+    else:
+      pass #check for mouse poistion to highlight
+    
+    
   def CleanUpDialogue(end):
     display = ''
     response = ''
