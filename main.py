@@ -289,10 +289,12 @@ while True:
     #print('running loop')
     for event in pygame.event.get():
         pos = pygame.mouse.get_pos()
+        if Draw.draw.dialogue == True:
+            Draw.dialogue.Dialogue.HandleEvent(pos) 
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        Text.MousePosCheck(pos)
+        Draw.draw.Text.MousePosCheck(pos)
     #if scene.scene_change != False: #Scan for scene change
     #    Engine.ChangeScene()
     if start == True:
