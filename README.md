@@ -28,3 +28,7 @@ Name of response text block #Could use more than one block for conditional respo
 'reff' 'One word reference to call response' Response display text 'rtrn'
 Finished
 ```
+TODO
+
+Gotta change the responses to be passed one at a time. Gotta create a system for the response to a dialogue option in the object.
+Gotta make the cleanup dialogue function clear the boxes and set it up for a new set of dialogue choices. Have to eventually learn how to do a scroll box. Might just replace some code with other code for that one.
