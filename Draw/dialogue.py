@@ -51,6 +51,7 @@ class Dialogue():
       line_count = int(math.ceil(lines))
       response_box_list[iii] = pygame.Rect(response_box_location[0], response_box_location[1], resp_length, resp_height * line_count)
       response_box_location[1] += (resp_height * line_count) + 20
+      Draw.draw.typing(resp, response_box_list[iii])
   
   def HandleEvents(mouse_pos, ev):
     if ev = 'Mouse Button Down':
