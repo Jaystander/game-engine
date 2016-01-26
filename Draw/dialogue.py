@@ -12,15 +12,19 @@ class Dialogue():
   response_ref = []
   response_count = 0
   response_list = []
-  response_box_list = [100, 100]
+  response_box_list = []
+  response_box_location = [100, 100]
+  resp_length = 300
+  resp_height = 20
+  keyboard_select = 0
+  mouse_select = None
   
   def InitDialogue():
     Draw.draw.dialogue = True #Sets the dialogue reference to true
     response_count = 0
     response_list = []
-    response_box_list = [100, 100]
-    resp_length = 300
-    resp_height = 20
+    response_box_location = [100, 100]
+    response_box_list = []
     response = ''
     '''display = text
     response = responses
@@ -55,18 +59,42 @@ class Dialogue():
       iii += 1
   
   def HandleEvents(mouse_pos, ev):
-    if ev = 'Mouse Button Down':
-      pass# Check location of mouse when button was pressed
-    elif ev = 'Keypress':
-      pass #use the keypress to activate a response
+    if ev == pygame.MOUSEBUTTONUP:
+      button_pressed = None
+      rbl = response_box_list
+      mp = mouse_pos
+      iii = 0
+      for rectangle in rbl: # checks if mouse is in each response rectangle
+        if mp[0] >= rbl[0] and mp[0] <= rbl[0] + rbl[2] and mp[1] >= rbl[1] and mp[1] <= rbl[1] + rbl[3]:
+          button_pressed = iii
+          break
+        else:
+          pass
+      if button_pressed != None:
+        button_pressed = None
+        return response_ref[button_pressed]
+      else:
+        pass
+    elif ev == pygame.KEYDOWN:
+      if event.key == k_DOWN:
+        if keyboard_select < response_count:
+          keyboard_select += 1
+        else:
+          pass
+      elif event.key == k_UP:
+        if keyboard_select > 0:
+          keyboard_select -= 1
+        else:
+          pass
+      elif event.key == k_ENTER:
+        return response_ref[keyboard_select] #return the reference string which will be passed to the scen, then object in order to get the response.
     else:
       pass #check for mouse poistion to highlight
     
     
-  def CleanUpDialogue(end):
+  def CleanUpDialogue():
     display = ''
     response = ''
     response_ref = []
-    if end == True: #Clears dialogue reference
-      Draw.draw.dialogue = False
+    Draw.draw.dialogue = False
     
