@@ -13,6 +13,7 @@ class Scene():
     npcs = []
     npc_descriptions = []
     description = 'This string describes the scene'
+    current_object = None
     
     
     def PopLists(self):
