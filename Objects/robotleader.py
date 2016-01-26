@@ -14,7 +14,7 @@ class RobotLeader(base.NPC):
   can_party = False
   can_trade = False
   
-  def Talk():
+  def Talk(): # Have to change the responses to be passed one at a time.
     if main.scenes[1].reference == "Robot Leader's Office"  
       if met_pc == False: # hasn;t met the pc yet
         npc_talk = Draw.file.DefString(filed, 'Robot Leader Not Met Office')
@@ -30,4 +30,6 @@ class RobotLeader(base.NPC):
       if met_pc == False: # hasn't met the pc yet
         pass
       #et cetera
+  def Respond(reff): #Accepts a reff string and then sets up what happens next based on which reff string it gets.
+    pass
       
