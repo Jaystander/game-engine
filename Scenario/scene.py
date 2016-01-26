@@ -35,4 +35,5 @@ class Scene():
         for item in self.npcs:
             npc_descriptions.append(item.description)
     
-    
+    def Respond(choice):
+        current_object.Respond(choice) # pass the reff used for the response action.
