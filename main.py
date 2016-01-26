@@ -289,8 +289,9 @@ while True:
     #print('running loop')
     for event in pygame.event.get():
         pos = pygame.mouse.get_pos()
+        ev = event.type
         if Draw.draw.dialogue == True:
-            Draw.dialogue.Dialogue.HandleEvent(pos) 
+            Draw.dialogue.Dialogue.HandleEvent(pos, ev) 
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
