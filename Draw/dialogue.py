@@ -1,4 +1,4 @@
-import pygame, draw
+import pygame, draw, math
 
 pygame.init()
 
@@ -10,28 +10,46 @@ class Dialogue():
   display = ''
   response = ''
   response_ref = []
+  response_count = 0
+  response_list = []
+  response_box_list = [100, 100]
   
-  def InitDialogue(text, responses):
+  def InitDialogue():
     Draw.draw.dialogue = True #Sets the dialogue reference to true
-    display = text
+    response_count = 0
+    response_list = []
+    response_box_list = [100, 100]
+    response = ''
+    '''display = text
     response = responses
     draw.typing(display, dialogue_box) 
     Dialogue.SetResponses() #Formats the response references and text, which is more complicated than the display text.
-    draw.Text.ResponseText(response, response_box)
+    draw.Text.ResponseText(response, response_box)'''
     
-  def SetResponses():
-    responses = response.split() #split the response string into words
-    fullstring = ''
+  def SetResponses(respond):
+    response_check = respond.split() #split the response string into words
+    response_string = ''
     tag = False #used to find reff tags
-    for word in responses:
+    for word in response_check:
       if tag == True:
         response_ref.append(word)
         tag = False
       elif word == 'reff':
         tag = True
       elif word != 'reff':
-        response += '' + word
+        response_string += '' + word
+    response_list.append(response_string)
+    response_count += 1
         
+  def DrawResponses():
+    iii = 0
+    for resp in response_list:
+      float(char_count) = float(len(resp) * 10)
+      float(lines) = char_count/float(10) #value for line length
+      line_count = int(math.ceil(lines))
+      response_box_list[iii] = pygame.Rect(response_box_location[0], response_box_location[1], resp_length, resp_height * line_count)
+      response_box_location[1] += (resp_height * line_count) + 20
+  
   def HandleEvents(mouse_pos, ev):
     if ev = 'Mouse Button Down':
       pass# Check location of mouse when button was pressed
