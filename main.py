@@ -291,7 +291,7 @@ while True:
         pos = pygame.mouse.get_pos()
         ev = event.type
         if Draw.draw.dialogue == True:
-            Draw.dialogue.Dialogue.HandleEvent(pos, ev) 
+            response_choice = Draw.dialogue.Dialogue.HandleEvent(pos, ev) 
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
@@ -301,6 +301,8 @@ while True:
     if start == True:
         Engine.ChangeScene(MainMenu)
         start = False
+    if response_choice != None:
+        scenes[1].Respond(response_choice) # Pass the button pressed to the current scene so it can pass it to the object.
     #pygame.draw.rect(screen, WHITE, mainscreen)
     #pygame.draw.rect(screen, WHITE, leftstats)
     #pygame.draw.rect(screen, WHITE, rightstats)
