@@ -19,6 +19,8 @@ class Dialogue():
     response_count = 0
     response_list = []
     response_box_list = [100, 100]
+    resp_length = 300
+    resp_height = 20
     response = ''
     '''display = text
     response = responses
@@ -45,7 +47,7 @@ class Dialogue():
     iii = 0
     for resp in response_list:
       float(char_count) = float(len(resp) * 10)
-      float(lines) = char_count/float(10) #value for line length
+      float(lines) = char_count/float(resp_length) #value for line length
       line_count = int(math.ceil(lines))
       response_box_list[iii] = pygame.Rect(response_box_location[0], response_box_location[1], resp_length, resp_height * line_count)
       response_box_location[1] += (resp_height * line_count) + 20
