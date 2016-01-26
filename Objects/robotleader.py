@@ -1,8 +1,9 @@
 import main, Draw, base
 
 class RobotLeader(base.NPC):
-filed = 'text.robotleader.txt'
-reference = 'Robot Leader'  
+  filed = 'text.robotleader.txt'
+  reference = 'Robot Leader'
+  race = 'Robot'
   met_pc = False
   opinion_pc = 75
   pc_gave_treasure = False
