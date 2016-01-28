@@ -109,3 +109,14 @@ class Transition():
     
     def Go(self):
         pass
+
+class Responses():
+    
+    response_dictionary = [ 'reff': functioncall(),
+                            'reff2': functioncall2(),
+    ]
+    
+    def ReffCall(reff):
+        response_dictionary[reff]()
+    
+    def activate
