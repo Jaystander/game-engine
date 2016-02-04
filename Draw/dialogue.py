@@ -90,7 +90,7 @@ class Dialogue():
     else:
       pass #check for mouse poistion to highlight
     
-  def HighlightSelection(): # highlights the current selections, different color for mouse and keyboard.
+  def HighlightSelection(): # Not Working, must split into one for keyboard and one for mouse and have them redraw the responses each time.
     s = pygame.Surface((rbl[keyboard_select][2],rbl[keyboard_select][3]), pygame.SRCALPHA)   # per-pixel alpha
     s.fill((255,255,255,128))                         # notice the alpha value in the color
     windowSurface.blit(s, (rbl[keyboard_select][0],rbl[keyboard_select][1]))
@@ -102,6 +102,7 @@ class Dialogue():
         m.fill((255,255,255,128))
         windowSurface.blit(m, (rbl[iii][0],rbl[iii][1]))
       iii += 1
+    pygame.display.flip()  
   
   def CleanUpDialogue():
     display = ''
