@@ -298,6 +298,8 @@ while True:
         Draw.draw.Text.MousePosCheck(pos)
     #if scene.scene_change != False: #Scan for scene change
     #    Engine.ChangeScene()
+    if Draw.draw.dialogue == True:
+        Draw.dialogue.Dialogue.HighlightSelection()
     if start == True:
         Engine.ChangeScene(MainMenu)
         start = False
