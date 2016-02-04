@@ -92,14 +92,14 @@ class Dialogue():
     
   def HighlightSelection(): # Not Working, must split into one for keyboard and one for mouse and have them redraw the responses each time.
     s = pygame.Surface((rbl[keyboard_select][2],rbl[keyboard_select][3]), pygame.SRCALPHA)   # per-pixel alpha
-    s.fill((255,255,255,128))                         # notice the alpha value in the color
+    s.fill((255,255,255,50))                         # notice the alpha value in the color
     windowSurface.blit(s, (rbl[keyboard_select][0],rbl[keyboard_select][1]))
     iii = 0
     for rct in rbl:
       mpoz = pygame.mouse.get_pos
       if mpoz[0] >= rct[0] and mpoz[0] <= rct[0] + rct[2] and mpoz[1] >= rct[1] and mpoz[1] <= rct[1] + rct[3]:
         m = pygame.Surface((rbl[iii][2], rbl[iii][3]), pygame.SRCAPLPHA)
-        m.fill((255,255,255,128))
+        m.fill((255,255,255,50))
         windowSurface.blit(m, (rbl[iii][0],rbl[iii][1]))
       iii += 1
     pygame.display.flip()  
