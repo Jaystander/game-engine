@@ -26,6 +26,7 @@ class Dialogue():
     response_box_location = [100, 100]
     response_box_list = []
     response = ''
+    rbl = response_box_list
     '''display = text
     response = responses
     draw.typing(display, dialogue_box) 
@@ -59,19 +60,17 @@ class Dialogue():
       iii += 1
   
   def HandleEvents(mouse_pos, ev):
+    button_pressed = None
     if ev == pygame.MOUSEBUTTONUP:
-      button_pressed = None
-      rbl = response_box_list
       mp = mouse_pos
       iii = 0
-      for rectangle in rbl: # checks if mouse is in each response rectangle
-        if mp[0] >= rbl[0] and mp[0] <= rbl[0] + rbl[2] and mp[1] >= rbl[1] and mp[1] <= rbl[1] + rbl[3]:
+      for rct in rbl: # checks if mouse is in each response rectangle
+        if mp[0] >= rct[0] and mp[0] <= rct[0] + rct[2] and mp[1] >= rct[1] and mp[1] <= rct[1] + rct[3]:
           button_pressed = iii
           break
         else:
           pass
-      if button_pressed != None:
-        button_pressed = None
+      if button_pressed != None
         return response_ref[button_pressed]
       else:
         pass
@@ -91,7 +90,19 @@ class Dialogue():
     else:
       pass #check for mouse poistion to highlight
     
-    
+  def HighlightSelection(): # highlights the current selections, different color for mouse and keyboard.
+    s = pygame.Surface((rbl[keyboard_select][2],rbl[keyboard_select][3]), pygame.SRCALPHA)   # per-pixel alpha
+    s.fill((255,255,255,128))                         # notice the alpha value in the color
+    windowSurface.blit(s, (rbl[keyboard_select][0],rbl[keyboard_select][1]))
+    iii = 0
+    for rct in rbl:
+      mpoz = pygame.mouse.get_pos
+      if mpoz[0] >= rct[0] and mpoz[0] <= rct[0] + rct[2] and mpoz[1] >= rct[1] and mpoz[1] <= rct[1] + rct[3]:
+        m = pygame.Surface((rbl[iii][2], rbl[iii][3]), pygame.SRCAPLPHA)
+        m.fill((255,255,255,128))
+        windowSurface.blit(m, (rbl[iii][0],rbl[iii][1]))
+      iii += 1
+  
   def CleanUpDialogue():
     display = ''
     response = ''
