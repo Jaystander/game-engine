@@ -1,21 +1,21 @@
 import re
 
 
-def DefString(files, keyphrase):
-  strng = ''
-  with open(files) as infile:
+def DefString(file, key):
+  string = ''
+  with open(file) as infile:
     copy = False
     for line in infile:
-        if line.strip() == keyphrase:
+        if line.strip() == key:
             copy = True
         elif line.strip() == "Finished":
             copy = False
         elif copy:
-            strng.append(line)
-  if strng == '':
-    print "String is empty"
+            string = string + ' ' + line
+  if string == '':
+    raise Exception("String is empty")
   else:
-    return strng
+    return string
 
 
   """stringrtrn = ''
