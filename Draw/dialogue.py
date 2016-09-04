@@ -31,7 +31,7 @@ class Dialogue():
     response = responses
     draw.typing(display, dialogue_box) 
     Dialogue.SetResponses() #Formats the response references and text, which is more complicated than the display text.
-    draw.Text.ResponseText(response, response_box)'''
+    draw.Text.ResponseText(response, response_box)a'''
     
   def SetResponses(respond):
     response_check = respond.split() #split the response string into words
