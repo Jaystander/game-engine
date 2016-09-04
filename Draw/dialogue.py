@@ -88,7 +88,7 @@ class Dialogue():
       elif event.key == k_ENTER:
         return response_ref[keyboard_select] #return the reference string which will be passed to the scen, then object in order to get the response.
     else:
-      pass #check for mouse poistion to highlight
+      pass #check for mouse poistion to highlighta
     
   def HighlightSelection(): # Not Working, must split into one for keyboard and one for mouse and have them redraw the responses each time.
     s = pygame.Surface((rbl[keyboard_select][2],rbl[keyboard_select][3]), pygame.SRCALPHA)   # per-pixel alpha
